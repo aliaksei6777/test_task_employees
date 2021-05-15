@@ -21,7 +21,7 @@ export const Employees = () => {
         dispatch(removeEmployee(id));
     };
 
-    const addEmployee = (name: string) => {
+    const addEmployeeHandler = (name: string) => {
         const newUser = {
             id: Math.floor(Math.random() * 1e7),
             first_name: name
@@ -32,7 +32,7 @@ export const Employees = () => {
 
     return (
         <EmployeesContainer>
-            <AddItemForm addUser={addEmployee}/>
+            <AddItemForm addUser={addEmployeeHandler}/>
             <div>
                 {isFetching ? <Preloader/> : <h2>Employees</h2>}
             </div>
