@@ -6,7 +6,7 @@ const initialState = {
     isFetching: false
 }
 
-export const employeesReducer = (state: initialStateType = initialState, action: ActionsType) => {
+export const employeesReducer = (state: InitialStateType = initialState, action: ActionsType) => {
     switch (action.type) {
         case "SET-EMPLOYEES":
             return {...state, users: action.users}
@@ -22,8 +22,8 @@ export const employeesReducer = (state: initialStateType = initialState, action:
 }
 
 export const setEmployees = (users: Array<UserType>) => ({type: "SET-EMPLOYEES", users} as const)
-export const addEmploy = (user: UserType) => ({type: "ADD-EMPLOYEE", user} as const)
-export const removeEmploy = (id: number) => ({type: "REMOVE-EMPLOYEE", id} as const)
+export const addEmployee = (user: UserType) => ({type: "ADD-EMPLOYEE", user} as const)
+export const removeEmployee = (id: number) => ({type: "REMOVE-EMPLOYEE", id} as const)
 export const toggleIsFetching = (isFetching: boolean) => ({type: 'TOGGLE-IS-FETCHING', isFetching} as const)
 
 
@@ -44,9 +44,9 @@ export const fetchEmployeesTC = (): AppThunk => async dispatch => {
 }
 
 
-type initialStateType = typeof initialState
+export type InitialStateType = typeof initialState
 export type ActionsType =
     | ReturnType<typeof setEmployees>
-    | ReturnType<typeof addEmploy>
-    | ReturnType<typeof removeEmploy>
+    | ReturnType<typeof addEmployee>
+    | ReturnType<typeof removeEmployee>
     | ReturnType<typeof toggleIsFetching>

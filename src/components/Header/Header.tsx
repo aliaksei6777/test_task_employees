@@ -7,8 +7,8 @@ export const Header = () => {
     return (
         <HeaderContainer>
             <Nav>
-                <StyledLink to={'/main'}>Main</StyledLink>
-                <StyledLink to={'/employees'}>Employees</StyledLink>
+                <StyledLink to={'/Main'}>Main</StyledLink>
+                <StyledLink to={'/Employees'}>Employees</StyledLink>
             </Nav>
         </HeaderContainer>
     )

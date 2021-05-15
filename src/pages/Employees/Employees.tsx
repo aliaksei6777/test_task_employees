@@ -2,10 +2,10 @@ import React, {useEffect} from 'react'
 import styled from "styled-components";
 import {useDispatch, useSelector} from "react-redux";
 import {UserType} from "../../api/api";
-import {RootStateType} from "../../store/store";
-import {addEmploy, fetchEmployeesTC, removeEmploy} from "../../store/employeesReducer";
-import {AddItemForm} from "../AddItemForm/AddItemForm";
-import {Preloader} from "../Preloader/Preloader";
+import {RootStateType} from "../../app/store";
+import {addEmployee, fetchEmployeesTC, removeEmployee} from "../../app/employeesReducer";
+import {AddItemForm} from "../../components/AddItemForm/AddItemForm";
+import {Preloader} from "../../components/Preloader/Preloader";
 
 export const Employees = () => {
 
@@ -18,7 +18,7 @@ export const Employees = () => {
     const dispatch = useDispatch();
 
     const clickHandler = (id: number) => {
-        dispatch(removeEmploy(id));
+        dispatch(removeEmployee(id));
     };
 
     const addEmployee = (name: string) => {
@@ -26,7 +26,7 @@ export const Employees = () => {
             id: Math.floor(Math.random() * 1e7),
             first_name: name
         }
-        dispatch(addEmploy(newUser))
+        dispatch(addEmployee(newUser))
     }
 
 
