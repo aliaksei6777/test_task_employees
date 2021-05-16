@@ -1,10 +1,10 @@
 import {applyMiddleware, combineReducers, createStore} from "redux"
-import {ActionsType, employeesReducer} from "./employeesReducer"
+import {ActionsType, reducer} from "./reducer"
 import thunk, {ThunkAction} from "redux-thunk";
 
 
 const rootReducer = combineReducers({
-    employees: employeesReducer
+    employees: reducer
 })
 
 export const store = createStore(rootReducer, applyMiddleware(thunk))

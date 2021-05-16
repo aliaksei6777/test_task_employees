@@ -6,7 +6,7 @@ const initialState = {
     isFetching: false
 }
 
-export const employeesReducer = (state: InitialStateType = initialState, action: ActionsType) => {
+export const reducer = (state: InitialStateType = initialState, action: ActionsType) => {
     switch (action.type) {
         case "SET-EMPLOYEES":
             return {...state, users: action.users}

@@ -19,6 +19,7 @@ export const AddItemForm: React.FC<AddItemFormPropsType> = ({addUser}) => {
     return (
         <div>
             <input value={name}
+                   placeholder={"Enter name"}
                    onChange={onChangeInputHandler}
                    onKeyPress={e => {if(e.key === "Enter") {addTitle()}}}
             />

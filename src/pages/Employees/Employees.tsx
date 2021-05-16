@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {useDispatch, useSelector} from "react-redux";
 import {UserType} from "../../api/api";
 import {RootStateType} from "../../app/store";
-import {addEmployee, fetchEmployeesTC, removeEmployee} from "../../app/employeesReducer";
+import {addEmployee, fetchEmployeesTC, removeEmployee} from "../../app/reducer";
 import {AddItemForm} from "../../components/AddItemForm/AddItemForm";
 import {Preloader} from "../../components/Preloader/Preloader";
 
